@@ -73,8 +73,8 @@ namespace ConsoleApp1
                 {
                     var t1 = new Point(angles[0].X + delta.X * i, angles[0].Y + delta.Y * j);
                     var t2 = new Point(angles[0].X + delta.X * (i+1), angles[0].Y + delta.Y * (j+1));
-                    //var lst = GetGeometryFromSector(t1, t2);
-                    obl[i,j] = new Obl(t1, t2);
+                    var lst = GetGeometryFromSector(t1, t2);
+                    obl[i,j] = new Obl(t1, t2, lst);
                 }
             }
         }
@@ -227,11 +227,11 @@ namespace ConsoleApp1
         public Point down;
         public List<int> edgeId;
 
-        public Obl(Point _up, Point _down)
+        public Obl(Point _up, Point _down, List<int> lst)
         {
             up = _up;
             down = _down;
-            
+            edgeId = lst;
         }
     }
 

@@ -9,16 +9,12 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            
             Graph gr = new Graph();
             gr.GetGraph();
             gr.MakeSectors();
             gr.ParseTrack();
-
-
             Console.WriteLine("------------");
-
-            var timebeg = DateTime.Now;
+            //var timebeg = DateTime.Now;
             var obls = gr.GetOblId();
             foreach (var t in obls)
             {
@@ -27,10 +23,9 @@ namespace ConsoleApp1
                     Console.WriteLine(k);
                 }
             }
-            var timeend = DateTime.Now;
-            Console.WriteLine(timeend - timebeg);
+            //var timeend = DateTime.Now;
+            //Console.WriteLine(timeend - timebeg);
             Console.ReadLine();
-            gr.ParseTrack();
         }
     }
 }
